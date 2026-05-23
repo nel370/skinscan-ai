@@ -82,7 +82,7 @@ export default function IntroForm() {
   };
 
   return (
-    <div className="min-h-screen bg-background flex flex-col relative overflow-hidden">
+    <div className="min-h-screen bg-background flex flex-col relative">
       <Header label="INTRO" />
 
       <div className="absolute top-16 left-6 md:left-10">

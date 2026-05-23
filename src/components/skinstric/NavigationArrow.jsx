@@ -11,24 +11,22 @@ export default function NavigationArrow({ direction = "right", label, onClick, d
         isLeft ? "flex-row" : "flex-row-reverse"
       }`}
     >
-      <span className="text-xs font-medium tracking-widest uppercase text-foreground group-hover:text-foreground/70 transition-colors">
+      <span className="text-[10px] font-medium tracking-widest uppercase text-foreground group-hover:text-foreground/60 transition-colors">
         {label}
       </span>
-      <div className={`relative w-10 h-10 flex items-center justify-center`}>
-        {/* Diamond border */}
-        <div className="absolute inset-0 border border-foreground/80 rotate-45 group-hover:scale-110 transition-transform duration-300" />
-        {/* Arrow */}
-        <svg
-          width="14"
-          height="14"
-          viewBox="0 0 14 14"
-          fill="none"
-          className={`relative z-10 ${isLeft ? "" : ""}`}
-        >
+      <div className="relative w-9 h-9 flex items-center justify-center shrink-0">
+        <svg width="36" height="36" viewBox="0 0 36 36" fill="none" className="transition-transform duration-300 group-hover:scale-110">
+          {/* Diamond border */}
+          <rect
+            x="2" y="2" width="32" height="32"
+            transform="rotate(45 18 18)"
+            stroke="currentColor" strokeWidth="1" fill="none" strokeOpacity="0.6"
+          />
+          {/* Filled triangle */}
           {isLeft ? (
-            <path d="M9 2L4 7L9 12" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+            <polygon points="22,11 22,25 11,18" fill="currentColor" />
           ) : (
-            <path d="M5 2L10 7L5 12" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+            <polygon points="14,11 25,18 14,25" fill="currentColor" />
           )}
         </svg>
       </div>

@@ -15,7 +15,7 @@ export default function NavigationArrow({ direction = "right", label, onClick, d
         {label}
       </span>
       <div className="relative w-9 h-9 flex items-center justify-center shrink-0">
-        <svg width="36" height="36" viewBox="0 0 36 36" fill="none" className="transition-transform duration-300 group-hover:scale-110">
+        <svg width="36" height="36" viewBox="0 0 36 36" fill="none" className="transition-transform duration-300 group-hover:scale-110 pointer-events-none">
           {/* Diamond border */}
           <rect
             x="2" y="2" width="32" height="32"

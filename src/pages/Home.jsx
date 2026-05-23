@@ -20,34 +20,35 @@ export default function Home() {
       <div className="flex-1 flex items-center justify-between px-6 md:px-10 relative">
 
         {/* LEFT arrow — DISCOVER A.I. */}
-        <div
-          className="flex flex-col items-center gap-3 cursor-pointer shrink-0 z-10"
+        <button
+          type="button"
+          className="flex flex-col items-center gap-3 shrink-0 z-10 bg-transparent border-none outline-none"
           onMouseEnter={() => setHovered('left')}
           onMouseLeave={() => setHovered(null)}
         >
-          {/* Triangle pointing left */}
           <div
-            className="transition-all duration-400"
-            style={{ opacity: hovered === 'right' ? 0 : 1, transform: hovered === 'left' ? 'scale(1.12)' : 'scale(1)' }}
+            className="transition-all duration-300"
+            style={{
+              opacity: hovered === 'right' ? 0 : 1,
+              transform: hovered === 'left' ? 'scale(1.12)' : 'scale(1)',
+            }}
           >
-            <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
-              {/* Outer diamond border */}
-              <rect x="2" y="2" width="36" height="36" rx="0" transform="rotate(45 20 20)" stroke="currentColor" strokeWidth="1" fill="none" strokeOpacity="0.6" />
-              {/* Filled triangle pointing left */}
+            <svg width="40" height="40" viewBox="0 0 40 40" fill="none" style={{ pointerEvents: 'none' }}>
+              <rect x="2" y="2" width="36" height="36" transform="rotate(45 20 20)" stroke="currentColor" strokeWidth="1" fill="none" strokeOpacity="0.6" />
               <polygon points="24,12 24,28 12,20" fill="currentColor" />
             </svg>
           </div>
           <span
-            className="text-[10px] tracking-widest uppercase font-medium transition-all duration-400 hidden md:block"
+            className="text-[10px] tracking-widest uppercase font-medium transition-all duration-300 hidden md:block"
             style={{ opacity: hovered === 'right' ? 0 : 1 }}
           >
             DISCOVER A.I.
           </span>
-        </div>
+        </button>
 
         {/* CENTER TEXT */}
         <div
-          className="flex-1 flex items-center justify-center px-4 md:px-8 transition-all duration-500"
+          className="flex-1 flex items-center justify-center px-4 md:px-8 transition-all duration-500 pointer-events-none"
           style={{
             transform: hovered === 'left'
               ? 'translateX(-6%)'
@@ -63,30 +64,32 @@ export default function Home() {
         </div>
 
         {/* RIGHT arrow — TAKE TEST */}
-        <div
-          className="flex flex-col items-center gap-3 cursor-pointer shrink-0 z-10"
+        <button
+          type="button"
+          className="flex flex-col items-center gap-3 shrink-0 z-10 bg-transparent border-none outline-none"
           onMouseEnter={() => setHovered('right')}
           onMouseLeave={() => setHovered(null)}
           onClick={() => navigate('/intro')}
         >
           <div
-            className="transition-all duration-400"
-            style={{ opacity: hovered === 'left' ? 0 : 1, transform: hovered === 'right' ? 'scale(1.12)' : 'scale(1)' }}
+            className="transition-all duration-300"
+            style={{
+              opacity: hovered === 'left' ? 0 : 1,
+              transform: hovered === 'right' ? 'scale(1.12)' : 'scale(1)',
+            }}
           >
-            <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
-              {/* Outer diamond border */}
-              <rect x="2" y="2" width="36" height="36" rx="0" transform="rotate(45 20 20)" stroke="currentColor" strokeWidth="1" fill="none" strokeOpacity="0.6" />
-              {/* Filled triangle pointing right */}
+            <svg width="40" height="40" viewBox="0 0 40 40" fill="none" style={{ pointerEvents: 'none' }}>
+              <rect x="2" y="2" width="36" height="36" transform="rotate(45 20 20)" stroke="currentColor" strokeWidth="1" fill="none" strokeOpacity="0.6" />
               <polygon points="16,12 28,20 16,28" fill="currentColor" />
             </svg>
           </div>
           <span
-            className="text-[10px] tracking-widest uppercase font-medium transition-all duration-400 hidden md:block"
+            className="text-[10px] tracking-widest uppercase font-medium transition-all duration-300 hidden md:block"
             style={{ opacity: hovered === 'left' ? 0 : 1 }}
           >
             TAKE TEST
           </span>
-        </div>
+        </button>
 
       </div>
 

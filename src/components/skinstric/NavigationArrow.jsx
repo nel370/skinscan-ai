@@ -5,6 +5,7 @@ export default function NavigationArrow({ direction = "right", label, onClick, d
 
   return (
     <button
+      type="button"
       onClick={onClick}
       disabled={disabled}
       className={`flex items-center gap-3 group transition-all duration-300 disabled:opacity-30 disabled:cursor-not-allowed ${

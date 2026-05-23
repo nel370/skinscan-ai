@@ -181,10 +181,10 @@ export default function IntroForm() {
       </div>
 
       {/* Bottom navigation */}
-      <div className="fixed bottom-8 left-6 md:left-10">
+      <div className="fixed bottom-8 left-6 md:left-10 z-50">
         <NavigationArrow direction="left" label="BACK" onClick={() => navigate('/')} />
       </div>
-      <div className="fixed bottom-8 right-6 md:right-10">
+      <div className="fixed bottom-8 right-6 md:right-10 z-50">
         <NavigationArrow
           direction="right"
           label="PROCEED"
